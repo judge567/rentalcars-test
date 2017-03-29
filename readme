@@ -1,0 +1,20 @@
+===== PART 1 =======
+This consists of the files part1.java and Vehicle.java, along with an external json library, json-simple-1.1.jar.
+To run the code, from a directory containing all the compiled classes, the json library, and the vehicles.json file , use the command 
+    java -cp '.:json-simple-1.1.jar' part1
+To recompile this code, run make.
+
+====== PART 2 =======
+For this part I have used the Spring.io framework and the Apache Maven tools to assist me in getting a simple web service up and running which can handle requests and output in JSON.
+
+My solution to this part runs a simple web server, which accepts HTTP GET requests at http://localHost:8080/, of the form PriceOrder, CombinedScore, Spec, and SupplierRating, each of which will return the string solutions to the four problems in part 1. The classes for each of these request are in files of the same names, and the controller and handlers for the requests is in the class part2. This is all within a container class, Application, which is simply to allow me to compile this all one standalone jar file.
+
+To run this part, run the command 
+    java -jar target/part2-1.jar 
+Then, visit http://localHost:8080/{PriceOrder, CombinedScore, Spec, or SupplierRating} in a web browser, and the output from part1 will be returned.
+
+To recompile and repackage the program, run 
+    mvn compile
+    mvn package
+    
+
